@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_category_location">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:disableDependentsState="true"
+            android:key="@string/pref_key_location_toggle"
+            android:title="@string/pref_title_location_toggle"
+            />
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_default_city"
+            android:dependency="@string/pref_key_location_toggle"
+            android:inputType="textCapWords"
+            android:key="@string/pref_key_city"
+            android:summary="@string/pref_summary_city_null"
+            android:title="@string/pref_title_city"
+            />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_category_unit">
+
+        <ListPreference
+            android:defaultValue="@string/pref_default_unit"
+            android:entries="@array/pref_entries_unit_names"
+            android:entryValues="@array/pref_entryvalues_unit_values"
+            android:key="@string/pref_key_unit"
+            android:title="@string/pref_title_temperature"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
